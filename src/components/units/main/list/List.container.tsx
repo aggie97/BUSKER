@@ -122,16 +122,25 @@ const MainList = () => {
 
   const loadMore = async () => {
     if (boardsData === undefined) return;
-
+    console.log("loadMore start", boardsData);
     try {
       await fetchMore({
         variables: {
-          page: Math.ceil(boardsData.fetchBoardsBySearch.length / 12) + 1,
+          page:
+            Math.ceil((boardsData.fetchBoardsBySearch.length ?? 12) / 12) + 1,
+          categoryId: selectedGenre,
+          districtId: selectedDistrict,
         },
         updateQuery: (prev, options) => {
+          console.log("updateQuery Start", prev, options);
           if (options.fetchMoreResult.fetchBoardsBySearch === undefined) {
+            console.log("새로 조회한 값이 없음.");
             return { fetchBoardsBySearch: [...prev.fetchBoardsBySearch] };
           }
+          console.log(
+            "새로 조회한 값이 있음.",
+            ...options.fetchMoreResult.fetchBoardsBySearch
+          );
           return {
             fetchBoardsBySearch: [
               ...prev.fetchBoardsBySearch,
