@@ -11,7 +11,7 @@ import {
 } from "../../../commons/styles/globalStyles";
 import { IMutation, IQuery } from "../../../commons/types/generated/types";
 import { FETCH_USER } from "../../units/myPage/detail/MyPageDetail.queries";
-
+import useMoveTo from "../../../commons/libraries/useMoveTo";
 import Header from "./header";
 
 const LOGOUT = gql`
@@ -31,7 +31,7 @@ const Layout = ({ children }: ILayoutProps) => {
   const [logout] = useMutation<Pick<IMutation, "logout">>(LOGOUT);
 
   const onClickMove = (path: string) => async () => {
-    await router.push(path);
+    await useMoveTo(path);
     setIsOpen(false);
   };
 

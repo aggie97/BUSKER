@@ -16,12 +16,9 @@ const MyPageDetailUI = (props: IMyPageProps) => {
             <ImageBox
               width="72px"
               height="72px"
-              src={
-                props.userImageURL ??
-                `https://storage.googleapis.com/busker-storage/${String(
-                  props.data?.fetchUser.userImageURL
-                )}`
-              }
+              src={`https://storage.googleapis.com/busker_dev-storage/${String(
+                props.data?.fetchUser.userImageURL
+              )}`}
             />
             <div
               style={{
@@ -101,7 +98,7 @@ const MyPageDetailUI = (props: IMyPageProps) => {
                   height="72px"
                   src={
                     props.userImageURL ??
-                    `https://storage.googleapis.com/busker-storage/${String(
+                    `https://storage.googleapis.com/busker_dev-storage/${String(
                       props.data?.fetchUser.userImageURL
                     )}`
                   }

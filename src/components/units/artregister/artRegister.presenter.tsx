@@ -57,10 +57,11 @@ const ArtRegisterPageWriteUI = ({
           <S.GenreWrapper>
             <S.TextStyle>공연장르</S.TextStyle>
             <Select
-              placeholder="Please select"
+              placeholder="장르를 선택해주세요."
               onChange={handleChange}
               style={{ width: "100%" }}
               options={options}
+              defaultValue={isEdit ? data?.fetchBoard.category?.name : null}
             />
             <S.ErrorMsg>{formState.errors.genre?.message}</S.ErrorMsg>
           </S.GenreWrapper>
@@ -72,7 +73,7 @@ const ArtRegisterPageWriteUI = ({
                   {new Array(3).fill(3).map((_, index) => {
                     return (
                       <>
-                        {data?.fetchBoard.boardImageURL[index] ? (
+                        {data?.fetchBoard.boardImageURL?.[index] ? (
                           <>
                             <S.ImgBtn
                               style={{

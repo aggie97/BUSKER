@@ -146,7 +146,7 @@ const ArtistDetailUI = (props: IArtistDetailProps) => {
                     fontSize: "1.2rem",
                   }}
                 >
-                  # {board.category.name}
+                  # {board.category?.name}
                 </span>
               </S.RecentInfo>
             </S.RecentArt>

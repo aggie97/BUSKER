@@ -45,7 +45,7 @@ const MainListUI = (props: IMainListProps) => {
                 board={board}
                 onClickListItem={props.onClickListItem}
               />
-            ))}
+            )) ?? <></>}
           </InfiniteScroll>
         </AnimatePresence>
       </S.ListBox>

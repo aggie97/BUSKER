@@ -173,7 +173,7 @@ const KakaoMap = ({
                             </div>
                             <div className="desc">
                               <div className="ellipsis category">
-                                # {board.category.name}
+                                # {board.category?.name}
                               </div>
                               <div className="jibun ellipsis">
                                 시작: {startAt}

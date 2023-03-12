@@ -1,12 +1,10 @@
 import * as S from "../src/commons/styles/home";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { deviceState, userPositionState } from "../src/commons/store";
+import useMoveTo from "../src/commons/libraries/useMoveTo";
 
 export default function Home() {
-  const router = useRouter();
-  // const { data } = useQuery<Pick<IQuery, "fetchUser">>(FETCH_USER);
   const [, setIsMobile] = useRecoilState(deviceState);
   const [, setUserPosition] = useRecoilState(userPositionState);
   useEffect(() => {
@@ -101,9 +99,7 @@ export default function Home() {
           )}
         </S.ContentBox>
         <S.LastContent>
-          <S.GoToMainButton
-            onClick={async () => await router.push("/main/list")}
-          >
+          <S.GoToMainButton onClick={async () => await useMoveTo("/main/list")}>
             버스킹 즐기러 가기{" "}
           </S.GoToMainButton>
         </S.LastContent>
