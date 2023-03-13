@@ -25,7 +25,7 @@ const ImageCarousel = (props: ICarouselProps) => {
         {props.data?.map((images: IBoardImages, i: number) => (
           <ImageBox key={i}>
             <StyledImage
-              src={`https://storage.googleapis.com/busker-storage/${String(
+              src={`https://storage.googleapis.com/busker_dev-storage/${String(
                 images.url
               )}`}
             />

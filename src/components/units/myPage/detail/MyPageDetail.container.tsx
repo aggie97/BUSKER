@@ -67,7 +67,7 @@ const MyPageDetail = () => {
         variables: { updateUserInput: { nickname, userImageURL: String(url) } },
         update(cache) {
           cache.modify({
-            fields: () => {},
+            fields: { fetchUser: () => {} },
           });
         },
       });

@@ -29,7 +29,7 @@ const ArtDetailUI = (props: IArtDetailProps) => {
         <S.ContentBox>
           <S.ArtistInfoBox>
             <ImageBox
-              src={`https://storage.googleapis.com/busker-storage/${String(
+              src={`https://storage.googleapis.com/busker_dev-storage/${String(
                 props.data?.fetchBoard.artist.artistImageURL
               )}`}
               width="75px"
@@ -43,7 +43,7 @@ const ArtDetailUI = (props: IArtDetailProps) => {
               <div style={{ fontSize: "1.5rem", color: "#6600FF" }}>버스커</div>
               {props.data?.fetchBoard.artist.active_name}
             </S.ArtistName>
-            <S.Genre># {props.data?.fetchBoard.category.name}</S.Genre>
+            <S.Genre># {props.data?.fetchBoard.category?.name}</S.Genre>
             {props.isArtist && (
               <S.ControllBox>
                 <EditOutlined onClick={props.onClickMoveToEdit} />
