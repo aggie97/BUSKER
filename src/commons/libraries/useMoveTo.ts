@@ -1,8 +1,13 @@
 import { useRouter } from "next/router";
 
-const useMoveTo = async (path: string) => {
+export function useMoveTo() {
   const router = useRouter();
-  return await router.push(path);
-};
 
-export default useMoveTo;
+  const onClickMoveToPage = (path: string) => () => {
+    void router.push(path);
+  };
+
+  return {
+    onClickMoveToPage,
+  };
+}

@@ -11,7 +11,6 @@ import {
 } from "../../../commons/styles/globalStyles";
 import { IMutation, IQuery } from "../../../commons/types/generated/types";
 import { FETCH_USER } from "../../units/myPage/detail/MyPageDetail.queries";
-import useMoveTo from "../../../commons/libraries/useMoveTo";
 import Header from "./header";
 
 const LOGOUT = gql`
@@ -26,12 +25,13 @@ interface ILayoutProps {
 
 const Layout = ({ children }: ILayoutProps) => {
   const router = useRouter();
+
   const { data } = useQuery<Pick<IQuery, "fetchUser">>(FETCH_USER);
   const [isOpen, setIsOpen] = useRecoilState(sidebarState);
   const [logout] = useMutation<Pick<IMutation, "logout">>(LOGOUT);
 
   const onClickMove = (path: string) => async () => {
-    await useMoveTo(path);
+    await router.push(path);
     setIsOpen(false);
   };
 
