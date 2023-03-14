@@ -4,7 +4,7 @@ import { IQuery } from "../../../../commons/types/generated/types";
 export interface IMyPageProps {
   nickname: string | undefined;
   artistData?: Pick<IQuery, "fetchArtist">;
-  userImageURL: string | undefined;
+  userImageURL: string;
   imageRef: RefObject<HTMLInputElement>;
   onClickEditPassword: () => void;
   onClickEditName: () => void;

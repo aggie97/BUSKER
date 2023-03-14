@@ -20,7 +20,7 @@ import {
 } from "./MyPageDetail.queries";
 
 const MyPageDetail = () => {
-  useAuth();
+  // useAuth();
   const router = useRouter();
   const imageRef = useRef<HTMLInputElement>(null);
   const [isEditMode, setIsEditMode] = useState(false);
@@ -84,7 +84,7 @@ const MyPageDetail = () => {
     fileReader.readAsDataURL(file);
     fileReader.onload = (event) => {
       if (typeof event.target?.result === "string") {
-        setUserImageURL(event.target?.result);
+        setUserImageURL(event.target.result);
         setFile(file);
       }
     };

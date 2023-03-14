@@ -11,7 +11,7 @@ export const buttonStyle = {
 };
 
 export const Wrapper = styled.div`
-  max-width: 700px;
+  max-width: 1200px;
   @media ${breakPoints.mobile} {
     padding: 0 10px;
   }
@@ -19,24 +19,38 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   margin: 0 auto;
+
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
 `;
 
-export const Container = styled.div`
+export const Left = styled.div`
+  position: sticky;
+  top: 10rem;
+  flex: 1.5;
+  border: 1px solid black;
   box-shadow: ${boxShadow};
   border-radius: 1rem;
-  max-width: 1100px;
-  width: 100%;
-  overflow: hidden;
+  padding: 1rem;
 `;
 
-export const Title = styled.h1`
-  font-size: 3rem;
-  font-weight: 700;
-  padding: 1em;
-  background-color: ${stylePrimaryColor};
-  color: white;
+export const ImageBox = styled.div`
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ChangeImageButton = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+export const Right = styled.div`
+  flex: 3;
+  border: 1px solid red;
+  height: 150vh;
 `;
 
 export const Contents = styled.div`

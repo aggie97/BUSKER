@@ -31,8 +31,8 @@ const Layout = ({ children }: ILayoutProps) => {
   const [logout] = useMutation<Pick<IMutation, "logout">>(LOGOUT);
 
   const onClickMove = (path: string) => async () => {
-    await router.push(path);
     setIsOpen(false);
+    await router.push(path);
   };
 
   const onClickLogout = async () => {
