@@ -10,7 +10,7 @@ export const HomeLink = styled.a`
   height: 100%;
   font-size: 3rem;
 
-  padding: 1em;
+  padding: 0.5em 1em;
   letter-spacing: 5px;
   cursor: pointer;
 
